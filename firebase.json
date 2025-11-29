@@ -1,19 +1,20 @@
 {
   "hosting": {
+    "site": "default",
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
         "run": {
           "serviceId": "mentaltrack-admin",
-          "region": "asia-southeast1"  // <--- CHANGED TO MATCH SINGAPORE
+          "region": "asia-southeast1"
         }
       }
     ]
+  },
+  "functions": {},
+  "frameworksBackend": {
+    "region": "asia-southeast1"
   }
 }
