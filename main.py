@@ -411,4 +411,10 @@ def index():
 
                     update_chart()
 
-ui.run(storage_secret=os.getenv('STORAGE_SECRET', 'mentaltrack_secret_key'))
+# main.py
+if __name__ in {"__main__", "__mp_main__"}:
+    ui.run(
+        host='0.0.0.0', # Critical for Cloud Run deployment
+        port=int(os.environ.get('PORT', 8080)),
+        storage_secret=os.getenv('STORAGE_SECRET', 'mentaltrack_secret_key')
+    )
